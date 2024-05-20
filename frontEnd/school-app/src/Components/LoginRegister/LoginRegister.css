@@ -1,0 +1,282 @@
+.container{
+    position: relative;
+    /* background: transparent;
+    border: 2px solid #0f0112;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 10px #0f0112; */
+    background-color: #0f0112;
+    width: 450px;
+    height: 450px;
+    color: white;
+    overflow: hidden;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    transition: height .2s ease;
+}
+.container.active{
+  height: 100vh;
+}
+
+.form-box.register .easy{
+  color: yellow;
+  font-size: 70%;
+}
+
+.container .form-box{
+    width: 100%;
+    padding: 50px;
+}
+.container .form-box.login{
+  transition: translate .18s ease;
+  translate: 0;
+}
+
+.container.active .form-box.login{
+  transition: none;
+  translate: -400px;
+}
+.container .form-box.register{
+  position: absolute;
+  transition: none;
+  translate: 400px;
+}
+
+
+.container.active .form-box.register{
+  transition: translate .18s ease;
+  translate: 0;
+}
+
+ 
+
+
+form h1{
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #8F897F;
+
+}
+form .input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+.input-box input{
+    width: 100%;
+    outline: none;
+    height: 100%;
+    background: transparent;
+    border: none;
+    border-radius: 40px;
+    border: 2px solid #0f140e;
+    font-size: 15px;
+    color: white;
+    padding: 20px 45px 20px 20px;
+}
+.input-box input::placeholder{
+    color: #bcb4d9;
+}
+.input-box .icon{
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  translate: 0 -50%;
+  font-size: 15px;
+}
+form .remember-forget{
+  display: flex;
+  justify-content: space-between;
+  font-size: 14.5px;
+  margin: -15px 0 15px;
+  color: yellow;
+}
+.remember-forget label input{
+  accent-color: #eda1ed;
+  margin-right: 4px;
+}
+.remember-forget a{
+  color: yellow;
+  text-decoration: none;
+  &:hover{
+    text-decoration: underline;
+  }
+}
+form .register-now{
+  font-size: 14.5px;
+  text-align: center;
+  margin: 20px 0 15px;
+}
+.register-now p a{
+  text-decoration: none;
+  color: yellow;
+  font-weight: 600;
+  &:hover{
+    text-decoration: underline;
+  }
+}
+.form-box.register form label{
+  margin-left: 38px;
+}
+
+// Login Button
+.btn-neon-10{
+    display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .btn-neon-10 a{
+    position: relative;
+      width: 136px;
+      height: 40px;
+      display: inline-block;
+      background: 
+#fff;
+      margin: 20px;
+    }
+    .btn-neon-10 a:before,
+    .btn-neon-10 a:after
+    {
+    content:'';
+      position: absolute;
+      inset: 0;
+      transition: 0.5s;
+      background: 
+#f00
+    }
+    .btn-neon-10 a:before,
+    .btn-neon-10 a:after
+    {
+     background: linear-gradient(45deg, #00ccff, #0e1538, #d400d4);
+    }
+    
+    .btn-neon-10 a:hover:before
+    {
+      inset: -3px;  
+    }
+    .btn-neon-10 a:hover:after
+    {
+      inset: -3px;  
+      filter: blur(10px);
+    }
+    .btn-neon-10 a button{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: inline-block;
+      background: 
+#0e1538;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.2em;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: 
+#fff;
+      border: 1px solid
+#040a29;
+      overflow: hidden;
+    }
+    .btn-neon-10 a button::before{
+    content:'';
+      position: absolute;
+      top: 0;
+      left: -50%;
+      width: 100%;
+      height: 100%;
+      background: 
+rgba(255,255,255,0.075);
+        transform: skew(25deg);
+    }
+
+
+
+// Register Button
+.btn-15,
+.btn-15 *,
+.btn-15 :after,
+.btn-15 :before,
+.btn-15:after,
+.btn-15:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+.btn-15 {
+  -webkit-tap-highlight-color: 
+transparent;
+  -webkit-appearance: button;
+  background-color: 
+  #0f0112;
+  background-image: none;
+  color: 
+#fff;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  font-weight: 900;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+  text-transform: uppercase;
+}
+.btn-15:disabled {
+  cursor: default;
+}
+.btn-15:-moz-focusring {
+  outline: auto;
+}
+.btn-15 svg {
+  display: block;
+  vertical-align: middle;
+}
+.btn-15 [hidden] {
+  display: none;
+}
+.btn-15 {
+  border-radius: 99rem;
+  border-width: 2px;
+  overflow: hidden;
+  padding: 0.8rem 3rem;
+  position: relative;
+  z-index: 0;
+}
+.btn-15 span {
+  mix-blend-mode: difference;
+}
+.btn-15:after,
+.btn-15:before {
+  --skew: 0.2;
+  background: 
+#fff;
+  content: "";
+  display: block;
+  height: 102%;
+  left: calc(-50% - 50% * var(--skew));
+  pointer-events: none;
+  position: absolute;
+  top: -104%;
+  transform: skew(calc(150deg * var(--skew))) translateY(var(--progress, 0));
+  transition: transform 0.2s ease;
+  width: 100%;
+}
+.btn-15:after {
+  --progress: 0%;
+  left: calc(50% + 50% * var(--skew));
+  top: 102%;
+  z-index: -1;
+}
+.btn-15:hover:before {
+  --progress: 100%;
+}
+.btn-15:hover:after {
+  --progress: -102%;
+}
