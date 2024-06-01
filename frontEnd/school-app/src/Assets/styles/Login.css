@@ -1,5 +1,5 @@
 .container{
-    position: relative;
+    /* position: relative; */
     /* background: transparent;
     border: 2px solid #0f0112;
     backdrop-filter: blur(15px);
@@ -8,12 +8,13 @@
     width: 450px;
     height: 450px;
     color: white;
-    overflow: hidden;
+    /* overflow: hidden; */
     border-radius: 25px;
     display: flex;
     align-items: center;
     transition: height .2s ease;
 }
+
 .container.active{
   height: 100vh;
 }
@@ -80,11 +81,20 @@ form .input-box{
 }
 .input-box .icon{
   position: absolute;
+  color: yellow;
   right: 20px;
   top: 50%;
   translate: 0 -50%;
   font-size: 15px;
 }
+
+.error-message {
+  color: red;
+  font-size: 0.875em;
+  margin-top: 0.25em;
+}
+
+
 form .remember-forget{
   display: flex;
   justify-content: space-between;
@@ -279,4 +289,13 @@ transparent;
 }
 .btn-15:hover:after {
   --progress: -102%;
+}
+
+/* Add this to your existing LoginRegister.css file */
+
+.error-message {
+  color: red; /* Error message color */
+  font-size: 14px; /* Font size */
+  margin-top: 5px; /* Margin for spacing */
+  margin-bottom: 10px; /* Margin for spacing */
 }

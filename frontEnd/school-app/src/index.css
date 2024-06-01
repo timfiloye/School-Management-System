@@ -12,7 +12,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url("./Components/Assets/Background.jpg") no-repeat;
+  background: url("./Assets/images/Background.jpg") no-repeat;
   background-size: cover;
   background-position: center;
   /* background-color: black; */
