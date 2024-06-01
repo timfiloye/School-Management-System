@@ -99,7 +99,7 @@ function Login() {
               type="text" placeholder="Username" name="username" required />
             <FaUser className="icon" />
             {formik.touched.username && formik.errors.username ? (
-              <div>{formik.errors.username}</div>
+              <div className="error-message">{formik.errors.username}</div>
             ) : null}
           </div>
 
@@ -114,7 +114,7 @@ function Login() {
               {showPassword ? <FaEye className="icon"/> : <FaEyeSlash className="icon"/>}
             </button>
             {formik.touched.password && formik.errors.password ? (
-              <div>{formik.errors.password}</div>
+              <div className="error-message pass">{formik.errors.password}</div>
             ) : null}
           </div>
 

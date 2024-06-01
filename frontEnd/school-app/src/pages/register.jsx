@@ -57,17 +57,17 @@ function Register() {
     },
   });
 
-  const [action, setAction] = useState('');
+  const [action] = useState('');
 
 //   const registerLink = (e) => {
 //     e.preventDefault();
 //     setAction(' active');
 //   };
 
-  const loginLink = (e) => {
-    e.preventDefault();
-    setAction('');
-  };
+  // const loginLink = (e) => {
+  //   e.preventDefault();
+  //   setAction('');
+  // };
 
 //   const toggleShowPassword = () => {
 //     setShowPassword(!showPassword);
@@ -96,7 +96,7 @@ function Register() {
               type="text" placeholder="Full Name" name="full_name" required />
             <FaRegUserCircle className="icon" />
             {formik.touched.full_name && formik.errors.full_name ? (
-              <div>{formik.errors.full_name}</div>
+              <div className="error-message">{formik.errors.full_name}</div>
             ) : null}
           </div>
           <div className="input-box">
@@ -107,7 +107,7 @@ function Register() {
               type="email" placeholder="Email" name="email" required />
             <FaEnvelope className="icon" />
             {formik.touched.email && formik.errors.email ? (
-              <div>{formik.errors.email}</div>
+              <div className="error-message">{formik.errors.email}</div>
             ) : null}
           </div>
           <div className="input-box">
@@ -118,7 +118,7 @@ function Register() {
               type="text" placeholder="Username" name="username" required />
             <FaUser className="icon" />
             {formik.touched.username && formik.errors.username ? (
-              <div>{formik.errors.username}</div>
+              <div className="error-message">{formik.errors.username}</div>
             ) : null}
           </div>
           <div className="input-box">
@@ -132,7 +132,7 @@ function Register() {
               {showRegisterPassword ? <FaEye className="icon"/> : <FaEyeSlash className="icon"/>}
             </button>
             {formik.touched.password && formik.errors.password ? (
-              <div>{formik.errors.password}</div>
+              <div className="error-message pass">{formik.errors.password}</div>
             ) : null}
           </div>
 
@@ -147,7 +147,7 @@ function Register() {
               {showRepeatPassword ? <FaEye className="icon"/> : <FaEyeSlash className="icon"/>}
             </button>
             {formik.touched.rPassword && formik.errors.rPassword ? (
-              <div>{formik.errors.rPassword}</div>
+              <div className="error-message pass">{formik.errors.rPassword}</div>
             ) : null}
           </div>
 
