@@ -89,10 +89,16 @@ form .input-box{
 }
 
 .error-message {
-  color: red;
-  font-size: 0.875em;
-  margin-top: 0.25em;
+  color: red; /* Color for the error message text */
+  font-size: 14px; /* Font size for the error message */
+  margin-top: 5px; /* Margin above the error message */
+  margin-bottom: 10px; /* Margin below the error message */
+  padding: 5px; /* Padding around the error message */
+  background-color: #ffe6e6; /* Background color for the error message */
+  border: 1px solid #ffcccc; /* Border for the error message */
+  border-radius: 4px; /* Border radius for rounded corners */
 }
+
 
 
 form .remember-forget{

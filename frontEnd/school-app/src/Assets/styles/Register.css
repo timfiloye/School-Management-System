@@ -156,18 +156,12 @@ form .input-box{
   font-size: 15px;
 }
 
-.error-message {
-  color: red;
-  font-size: 0.875em;
-  margin-top: 0.25em;
-}
-
 
 form .remember-forget{
   display: flex;
   justify-content: space-between;
   font-size: 14.5px;
-  margin: -10px 0 15px;
+  margin: -8px 0 15px;
   color: yellow;
 }
 .remember-forget label input{
@@ -317,13 +311,21 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 } 
 
 /* Add this to your existing LoginRegister.css file */
+.error-message.pass{
+  color: red; /* Error message color */
+  font-size: 12px; /* Font size */
+  margin-left: 20%;
+  margin-top: -10px;
+}
 
 .error-message {
-  color: red; /* Error message color */
-  font-size: 14px; /* Font size */
-  margin-top: 5px; /* Margin for spacing */
-  margin-bottom: 10px; /* Margin for spacing */
+  color: #990000; /* Error message color */
+  font-size: 12px; /* Font size */
+  margin-top: -10px; /* Margin for spacing */
+  margin-bottom: 40px; /* Margin for spacing */
+  margin-left: 20%;
 }
+
 
 
 .btn-43,
@@ -408,5 +410,3 @@ yellow;
 .btn-43:hover .old {
   opacity: 0;
 }
-
-// trial
