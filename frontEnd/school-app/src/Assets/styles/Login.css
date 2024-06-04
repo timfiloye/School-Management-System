@@ -9,7 +9,7 @@
     height: 450px;
     color: white;
     /* overflow: hidden; */
-    border-radius: 25px;
+    border-radius: 25px 25px 25px;
     display: flex;
     align-items: center;
     transition: height .2s ease;

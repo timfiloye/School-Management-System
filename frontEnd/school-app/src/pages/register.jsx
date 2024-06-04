@@ -1,7 +1,7 @@
 import { FaUser, FaEnvelope, FaRegUserCircle, FaEyeSlash, FaEye } from "react-icons/fa";
 import "../Assets/styles/Register.css";
-import { useState } from "react";
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { Link} from 'react-router-dom';
 import { useFormik } from "formik";
 import * as Yup from 'yup';
 
@@ -47,6 +47,7 @@ function Register() {
   
         const data = await res.json();
         window.location.reload()
+        // alert("Successful");
   
         console.log(data)
       }
@@ -81,6 +82,24 @@ function Register() {
     setShowRepeatPassword(!showRepeatPassword);
   };
 
+  const [user, setUser] = useState(null)
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      setUser(token)
+    } else {
+      setUser(null)
+    }
+    console.log(token);
+  }, [])
+
+ 
+  
+
+  // if(!user){
+  //   return <Navigate to={'/login'} />
+  // }
   return (
     <div className={`container${action}`}>
              {/* REGISTRATION FORM */}
