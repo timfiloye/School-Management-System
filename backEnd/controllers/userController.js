@@ -62,7 +62,7 @@ exports.storeUser = async (req, res) => {
 exports.loginUser = async (req, res) => {
     const data = req.body
     try {
-        const user = await User.findOne({where: { email: data.email}})
+        const user = await User.findOne({where: { username: data.username}})
         if(!user){
             res.status(400).json({
                 status: false,
@@ -89,12 +89,7 @@ exports.loginUser = async (req, res) => {
             message: error.message
         })
     }
-
-
-
     
-
-
 }
 
 const checkUser = async (data) => {

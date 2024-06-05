@@ -10,52 +10,53 @@ import * as Yup from 'yup';
 function Login() {
 
   const [showPassword, setShowPassword] = useState(false);
-//   const [showRegisterPassword, setShowRegisterPassword] = useState(false);
+//   const [showRegistepassword, setShowRegistepassword] = useState(false);
 //   const [showRepeatPassword, setShowRepeatPassword] = useState(false);
 
   // const passwordRules = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,10}$";
 
   const validationSchema = Yup.object({
-    email: Yup.string().email('Invalid email address').required('Required'),
-    password: Yup.string().min(6, 'Password must be at least 6 characters').required('Required'),
-    full_name: Yup.string().required('Required'),
     username: Yup.string().required('Required'),
-    rPassword: Yup.string().oneOf([Yup.ref('password'), null], 'Passwords must match').required('Required'),
+    password: Yup.string().required('Required'),
   });
 
   
 
   const formik = useFormik({
     initialValues: {
-      email: "",
-      password: "",
-      full_name: "",
       username: "",
-      rPassword: "",
+      password: "",
     },
     validationSchema: validationSchema,
     onSubmit: async values => {
+      console.log(values);
+      // alert("Login Successful")
 
-      try {
-        if(values.email === '') {
-          alert('LOGIN')
-        } else {
-        const res = await fetch('/users', {
-          method: 'POST',
+    try {
+
+        const res = await fetch("/login", {
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
             },
-            body: JSON.stringify(values)
-        })
-  
+            body: JSON.stringify({
+              username: values.username,
+              password: values.password,
+              }),
+        });
+
         const data = await res.json();
-        window.location.reload()
-  
-        console.log(data)
-      }
-      } catch (error) {
-        console.log(error.message);
-      }
+        console.log(data);
+        if(data.status === true){
+          alert(data.message)
+          localStorage.setItem('token', data.token)
+        } else{
+          alert(data.message)
+        }
+
+    } catch (error) {
+      console.log(error.message);
+    }
       
     },
   });
@@ -76,8 +77,8 @@ function Login() {
     setShowPassword(!showPassword);
   };
 
-//   const toggleShowRegisterPassword = () => {
-//     setShowRegisterPassword(!showRegisterPassword);
+//   const toggleShowRegistepassword = () => {
+//     setShowRegistepassword(!showRegistepassword);
 //   };
 
 //   const toggleShowRepeatPassword = () => {
@@ -126,6 +127,7 @@ function Login() {
           <button className="btn-43" type="submit">
             <span className="old">Login</span>
             <span className="new">Login Now</span>
+
           </button>
 
           <div className="register-now">
