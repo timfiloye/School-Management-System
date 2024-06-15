@@ -5,7 +5,14 @@ const jwt = require('jsonwebtoken');
 
 exports.getUser = async (req, res) => {
     try {
-        const users = await User.findAll({where: {id: 1}});
+        const decodedValue = jwt.verify(req.query.token, process.env.SECRET_KEY);
+        if(!decodedValue) {
+            res.status(401).json({
+                status: false,
+                message: 'No Token'
+            })
+        }
+        const users = await User.findOne({where: {id: decodedValue.user_id}});
         console.log(users)
         res.status(201).json({
             status: true,

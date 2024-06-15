@@ -1,13 +1,16 @@
 import { FaUser, FaEyeSlash, FaEye } from "react-icons/fa";
 // import "../Assets/styles/LoginRegister.css";
-import { useState } from "react";
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from 'react-router-dom';
 import { useFormik } from "formik";
 import * as Yup from 'yup';
+import { useUserContext } from "../contexts/userContext";
 // import Register from "./register";
 
 
 function Login() {
+  const {setToken, token, setLoading, setUser, setIsAuthenticated} = useUserContext();
+  const navigate = useNavigate();
 
   const [showPassword, setShowPassword] = useState(false);
 //   const [showRegistepassword, setShowRegistepassword] = useState(false);
@@ -19,6 +22,19 @@ function Login() {
     username: Yup.string().required('Required'),
     password: Yup.string().required('Required'),
   });
+
+  console.log('Login COMPONENT token: ', token);
+
+  useEffect(() => {
+    console.log('LOGIN USEEFFECT: ', token);
+    document.title = "Login";
+    if(token) {
+      navigate('/home');
+    }
+
+  }, [token])
+
+
 
   
 
@@ -50,6 +66,8 @@ function Login() {
         if(data.status === true){
           alert(data.message)
           localStorage.setItem('token', data.token)
+          setToken(data.token)
+          navigate('/')
         } else{
           alert(data.message)
         }
